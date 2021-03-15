@@ -9,7 +9,14 @@
   .container {
     width: 840px;
     margin: 0 auto;
-    margin-bottom: 200px;
+    margin-bottom: 50px;
+  }
+
+  .container-button {
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 100px;
+    width: 840px;
   }
   
   .main-header {
@@ -19,8 +26,8 @@
   
   #canvas {
     margin-top: 20px;
-    border: 1px solid white;
-    background-color:;
+    border: 3px solid white;
+    background-color: white;
     margin: 0 auto;
   }
   
@@ -32,4 +39,40 @@
         margin-bottom: 30px;
         text-shadow: 2px 3px 0px #898999;
         line-height: 1.2;
+  }
+
+  .button {
+    box-shadow: 4px 2px 5px 3px #9fb4f2;
+    background-color:#3100f7;
+    border:5px solid #0d0de3;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-family:Arial;
+    font-size:20px;
+    font-weight:bold;
+    font-style:italic;
+    padding:9px 67px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #000000;
+  }
+
+
+  .button:hover {
+    background-color: black;
+    border:5px solid black;
+  }
+  .button:active {
+    position:relative;
+    top:1px;
+  }
+
+  .instructions {
+    margin-top: -12px;
+    width: 50%;
+  }
+
+
+  .flo--r {
+    float: right;
   }
