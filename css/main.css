@@ -1,0 +1,35 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-image: linear-gradient(to bottom, #051937, #021f47, #002457, #002a67, #002f78, #2b3f89, #45509a, #5d62ab, #8886c0, #b0add5, #d8d5ea, #ffffff);
+  }
+  
+  .container {
+    width: 840px;
+    margin: 0 auto;
+    margin-bottom: 200px;
+  }
+  
+  .main-header {
+    color: #333;
+    text-transform: uppercase;
+  }
+  
+  #canvas {
+    margin-top: 20px;
+    border: 1px solid white;
+    background-color:;
+    margin: 0 auto;
+  }
+  
+  h1 {
+      color: white;
+      text-align: center;
+        font-weight: 900;
+        font-size: 3.25em;
+        margin-bottom: 30px;
+        text-shadow: 2px 3px 0px #898999;
+        line-height: 1.2;
+  }
