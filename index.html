@@ -10,18 +10,31 @@
     <link rel="stylesheet" href="css/main.css" />
   </head>
   <body>
-    <div class="container">
-      <h1>Kepler Discovering</h1>
-      <canvas id="canvas" width="800" height="600"></canvas>
+    <div  class="container">
+        <h1>HAMMERHEAD </h1>
+        <h2>BATTLE CRUISER</h2>
+
+        <div id="introsplash" class="" >
+            <div class="splash">
+            </div>
+            <div id="startbutton" class="container-button">
+                <button id="play" class="buttonplay">Play Game</button>
+                <section class="flo--r">
+                      <img src="./img/instructions.png" class="instructions">
+                </section>
+             </div>   
+        </div>
+
+        <div id="game" class="hide" >
+            <canvas id="canvas" width="1040" height="500" class="game-img"></canvas>
+            <section class="txta--c">
+                <button id="play" class="button-start">Start Game</button>
+            </section>
+        </div>
     </div>
 
-    <div class="container-button">
-        <a href="#" class="button">Start to Discover</a>
-        <section class="flo--r">
-            <img src="./img/instructions.png" class="instructions">
-        </section>
-    </div>
 
-    <script src="js/canvas.js"></script>
+
+    <script src="js/main.js"></script>
   </body>
 </html>
