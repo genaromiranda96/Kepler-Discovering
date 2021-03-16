@@ -26,10 +26,9 @@
     text-transform: uppercase;
   }
   
-  #canvas {
+   canvas {
     margin-top: 20px;
     border: 2px solid black;
-    background-color: white;
     margin: 0 auto;
   }
   
@@ -235,7 +234,7 @@ content: '';
   }
 
   .game-img {
-    background-image: url('../img/fondo-game.png');
+    background-image: url('');
   }
 
   .txta--c {
