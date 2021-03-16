@@ -18,17 +18,16 @@ document.addEventListener('DOMContentLoaded', () => {
             const hammerHeadGame = new Game (
                 {
                     ctx: ctx,
+                    rows: canvas.width / 10,
+                    columns: canvas.height / 10,
+                    maxCells: 10,
+                    hammer: new Ship(canvas.width / 10, canvas.height / 10),
                 }
             );
                 hammerHeadGame.start();
-
-        })
-
-
         });
-        
-        
-    }
+    });
+  }
     
     generateSplashScreen();
-})
+});
