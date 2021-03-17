@@ -1,52 +1,60 @@
 class Ship {
     constructor(maxRows, maxColumns) {
-        this.positionBody = [  
-            {row: 505, column: 300}, 
-        ];
-        this.maxRows = maxRows;
-        this.maxColumns = maxColumns;
-        this.body = [...this.positionBody]
-        this.direction = 'down';
-        this.intervalId = undefined;
+      this.positionBody = [
+        { row: 35, column: 10 },
+      ];
+      this.direction = 'down';
+      this.intervalId = undefined;
+      this.maxRows = maxRows;
+      this.maxColumns = maxColumns;
+      this.body = [...this.positionBody];
+      this.previousTail = undefined;
     }
-
+  
     _moveForward() {
-        let headShip = this.body[0]
-
-        if (this.direction === 'down') {
-            headship.column = headShip.column +1;
-        }
-        
+      let head = this.body[0];
+      if (this.direction === 'down') {
+          this.body.unshift({
+            row: (head.row + 1) % this.maxRows,
+            column: head.column,
+          });    
+      }
+      this.previousTail = this.body.pop();
     }
-
-    goLeft() {
-        if (this.direction === 'left') {
-            this.positionBody.row = (this.positionBody.row - 20 + 1040) % 1040;
-        }
-    }
-
-    goRight() {
-        if (this.direction === 'right') {
-            this.positionBody.row = (this.positionBody.row + 20) % 1040;
-        }
-    }   
-
+  
     goUp() {
-        if (this.direction === 'up') {
-            this.positionBody.column = this.positionBody.column - 20;
-        }
+      if (this.direction === 'up') {
+        this.direction = this.body.row + 20;
+      }
     }
-
+  
+    goLeft() {
+      if (this.direction === 'left') {
+        this.body.column = this.body.column - 20;
+      }
+    }
+  
+    goRight() {
+      if (this.direction === 'right') {
+        this.direction = this.body.column + 20;
+      }
+    }
+  
+  
+    collidesWith(planet) {
+        return this.body[0].row === planet.row && this.body[0].column === planet.column;
+      }
+  
+  
     move() {
-        this.intervalId = setInterval(this._moveForward.bind(this), 100);
+      this.intervalId = setInterval(this._moveForward.bind(this), 100);
     }
-
+  
     stop() {
-        if(this.intervalId) {
-            clearInterval(this.intervalId);
-            this.intervalId = undefined;
-        }
+      if (this.intervalId) {
+        clearInterval(this.intervalId);
+        this.intervalId = undefined;
+      }
     }
-
-}
+  }
 

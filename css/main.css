@@ -26,7 +26,13 @@
     text-transform: uppercase;
   }
   
-   canvas {
+   canvas#hammerhead {
+    margin-top: 20px;
+    border: 2px solid black;
+    margin: 0 auto;
+  }
+
+  .canvas-class {
     margin-top: 20px;
     border: 2px solid black;
     margin: 0 auto;
