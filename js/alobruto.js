@@ -6,44 +6,49 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
   
     let ship = {
-      x: 0,
-      y: 480,
+      x: 30,
+      y: 270,
     };
   
     let planet = {
       x: 1040,
-      y: 340,
+      y: 240,
     };
   
     let planet2 = {
-      x: 1040,
-      y: 140,
-    };
-
-    let planet3 = {
         x: 1040,
-        y: 500,
+        y: 450,
       };
   
+
+    let enemyship = {
+      x: 1040,
+      y: 100,
+    };
+
+
     function drawPlayer() {
-      ctx.fillStyle = 'red';
-      ctx.fillRect(ship.x, ship.y, 60, 60);
+      let img = document.querySelector('#shiphammer')
+      ctx.drawImage(img, ship.x, ship.y)
     }
   
-    function drawEnemy() {
-      ctx.fillStyle = 'green';
-      ctx.fillRect(planet.x, planet.y, 30, 30);
+    function drawPlanet() {
+        let imgPlanet = document.querySelector('#enemyplanet')
+        ctx.drawImage(imgPlanet, planet.x, planet.y)
     }
+       
+    function drawPlanet2() {
+        let imgPlanet2 = document.querySelector('#enemyplanet2')
+        ctx.drawImage(imgPlanet2, planet2.x, planet2.y)
+      }
+      
   
-    function drawEnemy2() {
-      ctx.fillStyle = 'purple';
-      ctx.fillRect(planet2.x, planet2.y, 60, 60);
+    function draEnemyShip() {
+      let enemyShipImg = document.querySelector('#enemyship')  
+      ctx.drawImage(enemyShipImg, enemyship.x, enemyship.y)
     }
 
-    function drawEnemy3() {
-        ctx.fillStyle = 'black';
-        ctx.fillRect(planet3.x, planet3.y, 70, 70);
-      }
+
   
     function movePlayer() {
       ship.y = ship.y +10;
@@ -54,11 +59,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }
   
     function moveEnemy2() {
-      planet2.x = planet2.x - 10;
+      enemyship.x = enemyship.x - 10;
     }
 
     function moveEnemy3() {
-        planet3.x = planet3.x - 10;
+        planet2.x = planet2.x - 10;
       }
   
     function cleanKH7() {
@@ -74,9 +79,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
     function update() {
       cleanKH7();
       drawPlayer();
-      drawEnemy();
-      drawEnemy2();
-      drawEnemy3();
+      drawPlanet();
+      draEnemyShip();
+      drawPlanet2();
       checkCollision();
       window.requestAnimationFrame(update);
     }
@@ -90,12 +95,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
         case 'ArrowRight':
           ship.x = (ship.x + 22) % 1040;
           break;
-        case 'ArrowDown':
-          ship.y = ship.y + 22;
-          break;
-        case key.code === 32:
-          ship.y = ship.y - 22;
-          break;
         default:
           break;
       }
@@ -104,9 +103,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
       }
     });
   
-    setInterval(moveEnemy, 800);
-    setInterval(moveEnemy2, 1200);
-    setInterval(moveEnemy3, 1200);
+    setInterval(moveEnemy, 200);
+    setInterval(moveEnemy2, 150);
+    setInterval(moveEnemy3, 240);
     setInterval(movePlayer, 500);
     
   
