@@ -1,12 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     let game;
 
-    function printGameOver() {
-      let canvas = document.querySelector('#snake');
-      canvas.style = 'display: none';
-      gameOver.style = 'display: block';
-    }
-
     function generateSplashScreen() {
     const intro = document.getElementById('introsplash');
   
@@ -29,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
               maxCells: 10,
               ship: new Ship(canvas.width / 5, canvas.height / 5),
             },
-            printGameOver
+            
           );
   
           hammerHeadGame.start();

@@ -8,17 +8,12 @@ class Game {
       this.planet = undefined;
       this.cb = callback;
     }
+
+    
   
     _drawShip() {
-      this.ctx.fillStyle = 'white';
-      this.ship.body.forEach((position) => {
-        this.ctx.fillRect(
-          position.column * this.maxCells,
-          position.row * this.maxCells,
-          20,
-          20,
-        );
-      });
+      let img = document.querySelector('#shiphammer')
+      this.ctx.drawImage(img, 55, 200);
     }
   
 

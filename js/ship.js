@@ -12,14 +12,8 @@ class Ship {
     }
   
     _moveForward() {
-      let head = this.body[0];
-      if (this.direction === 'down') {
-          this.body.unshift({
-            row: (head.row + 1) % this.maxRows,
-            column: head.column,
-          });    
-      }
-      this.previousTail = this.body.pop();
+      let head = this.body;
+      return head.row + 20;
     }
   
     goUp() {
