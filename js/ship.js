@@ -12,7 +12,7 @@ class Ship {
     // this.ctx.drawImage(img, this.positionX, this.positionY);
   }
 
-  moveForward() {
+  fall_Down() {
     return this.positionX + 20;
   }
 
@@ -30,7 +30,7 @@ class Ship {
 
 
   move() {
-    setInterval(this.moveForward.bind(this), 300);
+    setInterval(this.fall_Down.bind(this), 300);
   }
 
 }

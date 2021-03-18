@@ -18,7 +18,7 @@ class Game {
           default:
             break;
         }
-        if (event.code === 32) {
+        if (event.code === 'Space') {
             this.ship.moveUp();
           }
       });
@@ -49,7 +49,7 @@ class Game {
         this._checkCollisions();
         window.requestAnimationFrame(this._update.bind(this));
     }
-    
+
 }
 
 

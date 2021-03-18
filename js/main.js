@@ -17,9 +17,6 @@ document.addEventListener('DOMContentLoaded', () => {
          const hammerHeadGame = new Game(
              {
                ctx: ctx,
-               rows: canvas.width / 10,
-               columns: canvas.height / 10,
-               ship: new Ship(canvas.width / 5, canvas.height / 5),
              },  
            );
            hammerHeadGame._start();
