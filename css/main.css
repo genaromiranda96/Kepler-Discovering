@@ -223,6 +223,12 @@ content: '';
     float: right;
   }
 
+  .flo--l {
+    float: left;
+    margin-left: 350px;
+  }
+
+
 
   .show {
     display: block;
