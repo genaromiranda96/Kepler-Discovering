@@ -6,49 +6,69 @@ class Game {
       this.columns = options.columns;
       this.maxCells = options.maxCells;
       this.planet = undefined;
+      this.enemyship = undefined;
       this.cb = callback;
+      this.positionShip = {x:55, y:200};
+      this.positionEnemyShip = {x:910 , y:100 }
     }
 
     
   
     _drawShip() {
       let img = document.querySelector('#shiphammer')
-      this.ctx.drawImage(img, 55, 200);
+      this.ctx.drawImage(img, this.positionShip.x, this.positionShip.y);
     }
-  
+
+    goLeftShip(){
+        return this.positionShip.x - 20;
+     }
+
+     goRightShip(){
+        return this.positionShip.x + 20;
+     }
+
 
     _drawPlanet() {
-      this.ctx.fillStyle = 'red';
-      this.ctx.fillRect(this.planet.column * 10, this.planet.row * 11, 40, 40);
+        let imgPlanet = document.querySelector('#enemyplanet')
+        this.ctx.drawImage(imgPlanet, 940, 200);
     }
 
-    
+    _drawPlanet2() {
+        let imgPlanet2 = document.querySelector('#enemyplanet2')
+        this.ctx.drawImage(imgPlanet2, 890, 360);
+    }
+
+    _draEnemyShip() {
+        let enemyShipImg = document.querySelector('#enemyship')  
+        this.ctx.drawImage(enemyShipImg, this.positionEnemyShip.x, this.positionEnemyShip.y);
+      }
+
+     _moveForwardEnemyShip() {
+         this.positionEnemyShip.x = this.positionEnemyShip.x - 10;
+        }
+     
 
 
     _assignControlsToKeys() {
-      document.addEventListener('keydown', (event) => {
+      document.addEventListener('keydown', function (event) {
+        console.log(event.code);
         switch (event.code) {
           case 'ArrowLeft':
-            this.ship.goLeft();
+            this.ship.goLeftShip();
             break;
           case 'ArrowRight':
-            this.ship.goRight();
+            this.ship.goRightShip();
             break;
           default:
             break;
         }
-        if (key.keyCode === 32) {
-            this.ship.goUP();
+        if (event.keyCode === 32) {
+            //tecla spacio para subir
+            this.positionShip.y = this.positionShip.y - 22;
           }
       });
     }
   
-    _generatePlanet() {
-      this.planet = {
-        row: Math.floor(Math.random() * this.rows),
-        column: Math.floor(Math.random() * this.columns),
-      };
-    }
   
     _clean() {
       this.ctx.clearRect(0, 0, 1040, 500);
@@ -58,17 +78,21 @@ class Game {
       this._clean();
       this._drawShip();
       this._drawPlanet();
+      this._drawPlanet2()
+      this._draEnemyShip();          
+      setInterval(_moveForwardEnemyShip, 200);
       if (this.ship.collidesWith(this.planet)) {
         this._generatePlanet();
       }
       window.requestAnimationFrame(this._update.bind(this));
     }
-  
+        
     start() {
       this._assignControlsToKeys();
-      this._generatePlanet();
       this.ship.move();
       window.requestAnimationFrame(this._update.bind(this));
     }
+
+
   }
   

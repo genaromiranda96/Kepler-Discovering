@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
   
     setInterval(moveEnemy, 200);
     setInterval(moveEnemy2, 150);
-    setInterval(moveEnemy3, 240);
+    setInterval(moveEnemy3, 200);
     setInterval(movePlayer, 500);
     
   
