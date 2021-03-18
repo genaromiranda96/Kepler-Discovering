@@ -1,4 +1,20 @@
-document.addEventListener('DOMContentLoaded', (event) => {
+document.addEventListener('DOMContentLoaded', () => {
+
+    function generateSplashScreen() {
+    const intro = document.getElementById('introsplash');   
+    
+    const playButton = document.querySelector('#buttonplay');
+    playButton.addEventListener('click', () => {  
+        intro.classList.add('hide');
+        const game = document.getElementById('game');
+        game.classList.remove('hide');
+        game.classList.add('show');  
+     
+    const instructionsGame = document.querySelector('#instructions-s-g')    
+    instructionsGame.classList.remove('hide');   
+    instructionsGame.classList.add('show');    
+ 
+
     //the DOM is ready, we can do what we want!
     console.log('DOM loaded');
     const canvas = document.getElementById('canvas');
@@ -110,5 +126,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
     
   
     window.requestAnimationFrame(update);
-  });
-  
+
+    });
+  }
+  generateSplashScreen();
+});
+
