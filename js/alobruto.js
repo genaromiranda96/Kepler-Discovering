@@ -14,7 +14,6 @@ document.addEventListener('DOMContentLoaded', () => {
     instructionsGame.classList.remove('hide');   
     instructionsGame.classList.add('show');    
  
-
     //the DOM is ready, we can do what we want!
     console.log('DOM loaded');
     const canvas = document.getElementById('canvas');
@@ -71,15 +70,15 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   
     function moveEnemy() {
-      planet.x = planet.x - 10;
+      planet.x = (planet.x - 10 + 1040) % 1040;
     }
   
     function moveEnemy2() {
-      enemyship.x = enemyship.x - 10;
+      enemyship.x = (enemyship.x - 10 + 1040) % 1040;
     }
 
     function moveEnemy3() {
-        planet2.x = planet2.x - 10;
+        planet2.x = (planet2.x - 10 + 1040) % 1040;
       }
   
     function cleanKH7() {
@@ -106,10 +105,10 @@ document.addEventListener('DOMContentLoaded', () => {
       console.log(key.code);
       switch (key.code) {
         case 'ArrowLeft':
-          ship.x = (ship.x - 22 + 1040) % 1040;
+          ship.x = (ship.x - 30 + 1040) % 1040;
           break;
         case 'ArrowRight':
-          ship.x = (ship.x + 22) % 1040;
+          ship.x = (ship.x + 30) % 1040;
           break;
         default:
           break;
@@ -119,10 +118,10 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   
-    setInterval(moveEnemy, 200);
-    setInterval(moveEnemy2, 150);
-    setInterval(moveEnemy3, 200);
-    setInterval(movePlayer, 500);
+    setInterval(moveEnemy, 150);
+    setInterval(moveEnemy2, 100);
+    setInterval(moveEnemy3, 150);
+    setInterval(movePlayer, 200);
     
   
     window.requestAnimationFrame(update);
