@@ -29,6 +29,7 @@
    canvas#hammerhead {
     margin-top: 20px;
     border: 2px solid black;
+    background-image: url(/img/fondo-game3.png);
     margin: 0 auto;
   }
 

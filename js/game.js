@@ -1,8 +1,11 @@
 class Game {
     constructor(options) {
         this.ctx = options.ctx;
-        this.ship = new Ship (x,y);
-        this.enemys = new EnemyShip (x, y, r);
+        this.ship = new Ship();
+        this.enemys = new EnemyShip();
+        this.enemys2 = new EnemyShip2();
+        this.enemys3 = new EnemyShip3();
+        this.planets = [];
         this.lives = 3;
     }
 
@@ -29,7 +32,9 @@ class Game {
     }
 
     _checkCollisions(){
-
+        if (this.enemys.y + 20 >= this.ship.y && this.enemys.y + 20 ) {
+            console.log('crash');
+        }
     }
 
     _clean(){
@@ -39,13 +44,18 @@ class Game {
     _start(){
         this._assignControlsToKeys();
         this.ship.move();
+        this.enemys.move();
+        this.enemys2.move();
+        this.enemys3.move();
         window.requestAnimationFrame(this._update.bind(this));
     }
 
     _update(){
         this._clean();
         this.ship._drawShip(this.ctx);
-        this.enemys.forEach( enemy => enemy._drawShipEnemy(this.ctx));
+        this.enemys._drawShipEnemy(this.ctx);
+        this.enemys2._drawShipEnemy(this.ctx);
+        this.enemys3._drawShipEnemy(this.ctx);
         this._checkCollisions();
         window.requestAnimationFrame(this._update.bind(this));
     }

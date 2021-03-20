@@ -113,7 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
         default:
           break;
       }
-      if (key.keyCode === 32) {
+      if (key.code === 'Space') {
         ship.y = ship.y - 22;
       }
     });
