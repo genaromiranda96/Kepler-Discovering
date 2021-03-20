@@ -2,12 +2,14 @@ class Ship {
   constructor() {
     this.positionX = 35;
     this.positionY = 10;
+    this.sWidth = 100;
+    this.sHeight = 65;
   }
 
   _drawShip(ctx) {
     // //enlazado de imagen
     let img = document.querySelector('#shiphammer');
-    ctx.drawImage(img, this.positionX, this.positionY);
+    ctx.drawImage(img, this.positionX, this.positionY, this.sWidth, this.sHeight);
   }
 
   fall_Down() {
