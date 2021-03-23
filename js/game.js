@@ -49,8 +49,8 @@ class Game {
         this._assignControlsToKeys();
         this.ship.move();
         this.enemys.move();
-        // this.enemys2.move();
-        // this.enemys3.move();
+        this.enemys2.move();
+        this.enemys3.move();
         window.requestAnimationFrame(this._update.bind(this));
     }
 
