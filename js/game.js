@@ -1,9 +1,3 @@
-// function reciveDamage(health, damage) {
-//   console.log(health - damage);
-//   return health - damage;
-// }
-
-
 class Game {
     constructor(options) {
         this.ctx = options.ctx;

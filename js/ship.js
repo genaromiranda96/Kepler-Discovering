@@ -4,7 +4,7 @@ class Ship {
     this.positionY = 150;
     this.sWidth = 100;
     this.sHeight = 65;
-    this.health = 1500;
+    this.health = 3500;
     this.healthX = 65;
     this.healthY = 145;
     this.textY = 160;
