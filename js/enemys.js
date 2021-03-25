@@ -1,9 +1,10 @@
 class EnemyShip {
     constructor(){
+    this.damage = 150;
     this.positionX = 910;
     this.positionY = 400;
     this.sWidth = 120;
-    this.sHeight = 41;
+    this.sHeight = 56;
     }
 
     _drawShipEnemy(ctx){
@@ -13,22 +14,25 @@ class EnemyShip {
 
     }
 
+
     moveForward() {
         this.positionX = (this.positionX - 20 + 1040) % 1040;
-        this.positionY = (this.positionY - (Math.random() * (55 - (-55)) + (-55)) + 500) % 500;
-      } 
+        this.positionY = (this.positionY   - (Math.random() * (55 - (-55)) + (-55)) + 500) % 500;
+      }
 
     move() {
         setInterval(this.moveForward.bind(this), 300);
-      }  
+      }
 }
 
 class EnemyShip2 {
   constructor(){
+  this.damage = 200;
   this.positionX = 910;
   this.positionY = 230;
   this.sWidth = 168;
   this.sHeight = 56;
+  
   }
 
   _drawShipEnemy(ctx){
@@ -41,19 +45,20 @@ class EnemyShip2 {
   moveForward() {
       this.positionX = (this.positionX - 20 + 1040) % 1040;
       this.positionY = (this.positionY - (Math.random() * (55 - (-55)) + (-55)) + 500) % 500;
-    } 
+    }
 
   move() {
       setInterval(this.moveForward.bind(this), 300);
-    }  
+    }
 }
 
 class EnemyShip3 {
   constructor(){
+  this.damage = 250;
   this.positionX = 910;
   this.positionY = 50;
   this.sWidth = 149;
-  this.sHeight = 86; 
+  this.sHeight = 86;
   }
 
   _drawShipEnemy(ctx){
@@ -66,9 +71,9 @@ class EnemyShip3 {
   moveForward() {
       this.positionX = (this.positionX - 20 + 1040) % 1040;
       this.positionY = (this.positionY - (Math.random() * (55 - (-55)) + (-55)) + 500) % 500;
-    } 
+    }
 
   move() {
       setInterval(this.moveForward.bind(this), 300);
-    }  
+    }
 }
