@@ -13,8 +13,8 @@ class Ship {
 
   reciveDamage(damage) {
     console.log(this.health - damage)
-    return this.health - damage;
-     }
+    this.health = this.health - damage;
+  }
 
   _drawShip(ctx) {
     let img = document.querySelector('#shiphammer');
@@ -27,18 +27,19 @@ class Ship {
     let health = this.health;
     ctx.font = '10pt Arial';
     ctx.fillStyle = 'white';
-    ctx.fillText(health, this.healthX, this.textY);
+    ctx.fillText(this.health, this.healthX, this.textY);
   }
 
   fall_Down() {
+    console.log(this.positionY);
     this.positionY = (this.positionY + 20 + 500) % 500;
     this.healthY = (this.healthY + 20 + 500) % 500;
     this.textY = (this.textY + 20 + 500) % 500;
   }
 
   moveRight() {
-    this.positionX = this.positionX + 20; 
-    this.healthX = this.healthX + 20; 
+    this.positionX = this.positionX + 35; 
+    this.healthX = this.healthX + 35; 
   }
 
   moveLeft() {
@@ -50,8 +51,6 @@ class Ship {
     this.positionY = this.positionY - 35;
     this.healthY = this.healthY - 35;
     this.textY = this.textY - 35;
-
-
   }
 
 

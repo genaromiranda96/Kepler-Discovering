@@ -41,7 +41,7 @@ class Game {
     _checkCollisions(){
       if ((this.enemys.positionY + 30 >= this.ship.positionY && this.enemys.positionY + 30 <= this.ship.positionY + 30) && 
       (this.enemys.positionX + 50 >= this.ship.positionX && this.enemys.positionX + 50 <= this.ship.positionX + 50)){
-        this.ship.reciveDamage(this._generateDamage())} 
+        this.ship.reciveDamage(this.damage + this.enemys.damage);} 
          else if ((this.enemys2.positionY + 30 >= this.ship.positionY && this.enemys2.positionY + 30 <= this.ship.positionY + 30) && 
       (this.enemys2.positionX + 50 >= this.ship.positionX && this.enemys2.positionX + 50 <= this.ship.positionX + 50)){
          alert('Crash');
